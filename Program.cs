@@ -1,29 +1,49 @@
 ﻿using System;
 
-namespace HelloWorld
+namespace Type_Conversion
 {
     class Program
     {
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Hello World!");
-            Console.Clear();
-            Console.WriteLine("Hello World 2!");
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            */
-            var number = 1;
-           var count = 3;
-           var hj = 2.11f;
+            byte b = 1;
+            int i = b;
+            Console.WriteLine(i);
+            int c = 256; 
+            byte d = (byte)c;
+            Console.WriteLine(d);
+            // Non- Compatible conversitons.
+            var s = "1234";
+            var j = Convert.ToInt32(s);
+            Console.WriteLine(j);
 
-            Console.WriteLine(number); 
-            Console.WriteLine(hj);
+            // Exception Handling
+            /* var number = "1234";
+             var bbb= Convert.ToByte(number);
+             Console.WriteLine(bbb);
+             */
+            try
+            {
+                var number = "1234";
+                var bbb = Convert.ToByte(number);
+                Console.WriteLine(bbb);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("This conversion can not be done due to less space in byte!!!");
+
+            }
+            //....................... OPERATORS ..............................
+            var z = 1;
+            var y = 2;
+            Console.WriteLine("a+b = "+ z+y);
+            Console.WriteLine("a/b = "+ z / y);
+            Console.WriteLine("a/b = "+ (float)z / (float) y);
+            Console.WriteLine("a>b = " + (z > y));
+            Console.WriteLine("a==b = "+(z == y));
+            Console.WriteLine("a<b = "+(z < y));
+
+
 
         }
     }
